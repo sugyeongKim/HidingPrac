@@ -35,12 +35,15 @@ namespace HidingPrac
         }
         static void Main(string[] args)
         {
-            Child child = new Child();
-            Parent parent = new Parent();
-            Console.WriteLine(child.variable);
-            Console.WriteLine(parent.variable);
-            child.Method();
-            ((Parent)child).Method();
+            Child c = new Child();
+            Console.WriteLine("하이딩");
+            Console.WriteLine("Child variable : "+c.variable);
+            Console.WriteLine("Parent variable : " + ((Parent)c).variable);
+            c.Method();
+            ((Parent)c).Method();
+            Console.WriteLine("오버라이딩");
+            c.Method2();
+            ((Parent)c).Method2();
         }
     }
 }
